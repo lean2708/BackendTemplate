@@ -73,6 +73,7 @@ public class UserServiceImpl implements UserService {
         return user.getId();
     }
 
+
     @Override
     public void updateUser(long userId, UserRequestDTO request) {
         User user = getUserById(userId);
@@ -212,8 +213,10 @@ public class UserServiceImpl implements UserService {
         return repository.advanceSearchByCriteria( pageNo, pageSize, sortBy, address, search);
     }
 
+
+
     @Override
-    public PageResponse<?> advanceSearchWithSpecification(Pageable pageable, List<String> user, List<String> address) {
+    public PageResponse<?> advanceSearchWithSpecification(Pageable pageable, String[] user, String[] address) {
 
         Page<User> users = null;
 
@@ -221,6 +224,7 @@ public class UserServiceImpl implements UserService {
 
         if(user != null && address != null){
             // Tim kiem tren user va address => Join table
+            return repository.getUserJoinedAddress(pageable, user, address);
 
         }else if(user != null && address == null){
             // Tim kiem tren user => khong can join sang address

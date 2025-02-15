@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>vn.tayjava</groupId>
-    <artifactId>tayjava-sample-code</artifactId>
+    <artifactId>BackendTemplate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>tayjava-sample-code</name>
+    <name>BackendTemplate</name>
     <description>Backend API sample code using Spring Boot 3</description>
     <properties>
         <java.version>17</java.version>

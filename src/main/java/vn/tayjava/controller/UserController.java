@@ -144,8 +144,8 @@ public class UserController {
     @Operation(summary = "Advance search query by Specification")
     @GetMapping("/advance-search-with-specification")
     public ResponseData<?> advanceSearchWithSpecification(Pageable pageable,
-                                                   @RequestParam(required = false) List<String> user,
-                                                   @RequestParam(required = false) List<String> address) {
+                                                   @RequestParam(required = false) String[] user,
+                                                   @RequestParam(required = false) String[] address) {
         log.info("Advance search query by Specification");
         return new ResponseData<>(HttpStatus.OK.value(), "users", userService.advanceSearchWithSpecification(pageable, user, address));
     }

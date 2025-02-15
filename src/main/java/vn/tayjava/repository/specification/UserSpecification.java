@@ -4,6 +4,7 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.data.jpa.domain.Specification;
@@ -19,7 +20,7 @@ public class UserSpecification implements Specification<User> {
 
 
     @Override
-    public Predicate toPredicate(Root<User> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
+    public Predicate toPredicate(@NotNull Root<User> root,@NotNull CriteriaQuery<?> query,@NotNull CriteriaBuilder criteriaBuilder) {
         return switch (criteria.getOperation()){
             case EQUALITY -> criteriaBuilder.equal(root.get(criteria.getKey()), criteria.getValue());
             case NEGATION -> criteriaBuilder.notEqual(root.get(criteria.getKey()), criteria.getValue());

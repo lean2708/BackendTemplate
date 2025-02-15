@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TayJavaApplication {
+public class BackendTemplateApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TayJavaApplication.class, args);
+		SpringApplication.run(BackendTemplateApplication.class, args);
 	}
 
 }
